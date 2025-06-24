@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    h1 {
+      margin-top: 100px;
+      font-size: 4rem;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+    p {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+    img {
+      width: 300px;
+      border-radius: 20px;
+      margin-top: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      animation: fall 4s linear infinite;
+      opacity: 0.8;
+      border-radius: 50%;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday Radhika! 🎉</h1>
+  <p>Wishing you a magical birthday on June 29th, Radhika! 🎂💖</p>
+  <img src="https://i.imgur.com/Yk6nTds.png" alt="Birthday Cake">
+
+  <!-- Birthday Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/26/audio_79be2d2d70.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Confetti Script -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      confetti.style.animationDelay = Math.random() * 4 + 's';
+      confetti.style.top = '-10px';
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
